@@ -72,7 +72,9 @@ function ProjectCard({ project, index, open, readMore, onToggle, onReadMore }: P
       >
         <div className="flex items-baseline justify-between gap-6">
           <div className="min-w-0">
-            <h3 className="display-md text-[1.5rem] leading-tight text-ivory">{project.name}</h3>
+            <h3 className="display-md text-[1.5rem] leading-tight break-words text-ivory">
+              {project.name}
+            </h3>
             {meta ? (
               <p className="mt-1.5 text-[0.72rem] uppercase tracking-[0.22em] text-ivory-muted phosphor-text">
                 {meta}
@@ -81,7 +83,7 @@ function ProjectCard({ project, index, open, readMore, onToggle, onReadMore }: P
           </div>
           <div className="flex shrink-0 items-center gap-3">
             <span
-              className="border-2 border-line px-2 py-0.5 font-terminal text-[0.85rem] leading-none text-gold"
+              className="hidden border-2 border-line px-2 py-0.5 font-terminal text-[0.85rem] leading-none text-gold sm:block"
               style={{ clipPath: CUT_CHIP }}
               aria-hidden="true"
             >

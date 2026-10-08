@@ -27,7 +27,7 @@ function DetailRow({ label, value, href }: { label: string; value: string; href?
   const content = (
     <>
       <span className="eyebrow eyebrow--muted shrink-0 text-[0.68rem]">{label}</span>
-      <span className="text-[1rem] text-ivory-dim">{value}</span>
+      <span className="min-w-0 break-words text-right text-[1rem] text-ivory-dim">{value}</span>
     </>
   );
 
@@ -35,14 +35,14 @@ function DetailRow({ label, value, href }: { label: string; value: string; href?
     return (
       <a
         href={href}
-        className="flex items-baseline justify-between gap-6 border-b border-line-soft py-5 transition-colors hover:text-gold-bright"
+        className="flex items-baseline justify-between gap-3 border-b border-line-soft py-5 transition-colors hover:text-gold-bright sm:gap-6"
       >
         {content}
       </a>
     );
   }
   return (
-    <div className="flex items-baseline justify-between gap-6 border-b border-line-soft py-5">
+    <div className="flex items-baseline justify-between gap-3 border-b border-line-soft py-5 sm:gap-6">
       {content}
     </div>
   );
