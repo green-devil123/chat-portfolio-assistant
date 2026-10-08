@@ -1,0 +1,20 @@
+[
+  {
+    "id": "btech",
+    "qualification": "B.Tech in Electronics and Communication Engineering",
+    "institution": "Dev Bhoomi Uttarakhand University",
+    "year": "2016"
+  },
+  {
+    "id": "intermediate",
+    "qualification": "Intermediate (12th)",
+    "institution": "Chaudhary Biri Singh Inter College",
+    "year": "2011"
+  },
+  {
+    "id": "high-school",
+    "qualification": "High School (10th)",
+    "institution": "St Andrews Senior Secondary School",
+    "year": "2009"
+  }
+]

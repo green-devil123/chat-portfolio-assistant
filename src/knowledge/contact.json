@@ -1,0 +1,23 @@
+{
+  "location": "Bengaluru, Karnataka, India",
+  "phone": "+91-8171373894",
+  "email": "agarwal.tarun90@gmail.com",
+  "links": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/tarun-agarwal-073454114/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/green-devil123"
+    },
+    {
+      "label": "LeetCode",
+      "url": "https://leetcode.com/u/user8802ni/"
+    },
+    {
+      "label": "Portfolio",
+      "url": "https://tarunova.online/"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "stashfin",
+    "company": "Stashfin",
+    "title": "Senior Software Engineer",
+    "location": "Bengaluru, Karnataka",
+    "period": "Nov 2024 - June 2025",
+    "start": "2024-11",
+    "end": "2025-06",
+    "highlights": [
+      "Modernized the lending platform by migrating a legacy PHP monolith to a microservices architecture, reducing API latency by 80% (from 1.5s to 300ms) and decreasing production incidents by 70%.",
+      "Architected and deployed high-throughput backend services for multiple financial products (Personal Loan, LOC, LAMF), improving conversion by 2× and growing monthly disbursals to ₹500 Cr.",
+      "Built responsive user interfaces with Tailwind CSS, integrating DigiLocker, CKYC, and Account Aggregator services to reduce customer onboarding time by 35%.",
+      "Collaborated with a 25-member cross-functional engineering team using Agile/Scrum methodologies to deliver scalable platform features, drive code reviews, deploy CI/CD pipelines, and optimize AWS cloud infrastructure."
+    ]
+  },
+  {
+    "id": "zintellix",
+    "company": "Zintellix",
+    "title": "Senior Full Stack Developer",
+    "location": "Bengaluru, Karnataka",
+    "period": "Dec 2023 - Nov 2024",
+    "start": "2023-12",
+    "end": "2024-11",
+    "highlights": [
+      "Led a team of 4 engineers to architect and launch a scalable price-optimization SaaS platform, improving pricing accuracy by 22% and driving rapid customer adoption.",
+      "Designed and implemented pricing algorithms and comparative analytics workflows enabling data-driven pricing decisions.",
+      "Supporting 10k+ daily transactions with high reliability and performance.",
+      "Established engineering best practices, driving Unit Testing (Jest) and robust DevOps workflows to reduce deployment failures by 30% and optimize application stability."
+    ]
+  },
+  {
+    "id": "lumiq",
+    "company": "Lumiq.ai",
+    "title": "Full Stack Developer",
+    "location": "Noida, U.P",
+    "period": "Mar 2021 - Nov 2023",
+    "start": "2021-03",
+    "end": "2023-11",
+    "highlights": [
+      "Conceptualized and deployed Empower Pryzm, an event-driven observability platform, improving incident detection and resolution efficiency by 40%.",
+      "Built data-processing applications (Ontology, Data Mapping, Transformation, Integration) enabling automated workflows and reducing manual debugging efforts by 30%.",
+      "Spearheaded the Term Insurance ISNP platform utilizing Microservices architecture supporting 28 products and 40+ RESTful APIs, reducing API latency from 4s to 1s.",
+      "Integrated Strapi CMS to enable configurable product workflows, reducing customization and rollout time by 25%.",
+      "Mentored and led 2 backend engineers, conducting code reviews and contributing to system design and architecture decisions."
+    ]
+  },
+  {
+    "id": "manprax",
+    "company": "Manprax Software LLP",
+    "title": "Software Engineer",
+    "location": "New Delhi",
+    "period": "Sep 2018 - Mar 2021",
+    "start": "2018-09",
+    "end": "2021-03",
+    "highlights": [
+      "Progressed from Full-Stack Intern to Software Engineer, developing enterprise web applications and hybrid mobile platforms.",
+      "Delivered BackPac (Event Engagement Platform) and Gates Forum (Bidding & Sales Platform) using modern front-end frameworks and cloud databases.",
+      "Built LLF & ISLI Dashboards for real-time educational data visualization and engineered the Humanital Job Portal with integrated user profiles.",
+      "Developed the DCPCR Portal, an internal workflow automation platform for government compliance.",
+      "Optimized system performance and UI/UX responsiveness across all legacy projects, directly increasing client product adoption."
+    ]
+  }
+]

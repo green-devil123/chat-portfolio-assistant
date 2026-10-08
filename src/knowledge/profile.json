@@ -1,0 +1,18 @@
+{
+  "name": "Tarun Agarwal",
+  "title": "Senior Software Engineer",
+  "focus": "Full Stack",
+  "location": "Bengaluru, Karnataka, India",
+  "yearsOfExperience": "6+",
+  "summary": "Senior Software Engineer with 6+ years of experience designing and delivering high-performance product platforms and web applications using the MERN/MEAN stack. Skilled in system design, backend architecture, microservices, distributed systems, and event-driven applications supporting high-volume production workloads. Experienced in building scalable REST APIs and end-to-end products, from backend services to intuitive user interfaces. Strong track record of performance optimization, technical ownership, and cross-functional collaboration to deliver reliable, maintainable, and customer-focused software.",
+  "coreCompetencies": [
+    "Backend Architecture & API Design",
+    "System Design & Scalability",
+    "Agile Development & Cross-Functional Collaboration",
+    "Technical Ownership & Team Mentorship"
+  ],
+  "achievements": [
+    "Spotlight Employee Award (Lumiq) – Engineered Empower Pryzm, an advanced data observability tool, significantly improving system efficiency.",
+    "Active contributor on LeetCode and GitHub, working on open-source projects and algorithmic problem-solving."
+  ]
+}

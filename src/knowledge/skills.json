@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "name": "Languages",
+      "items": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "Jest", "Mocha"]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "items": ["Node.js", "Express.js", "React.js", "Angular", "NestJS", "Redux"]
+    },
+    {
+      "name": "Databases & Messaging",
+      "items": ["MySQL", "MongoDB", "Redis", "RabbitMQ"]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "items": ["AWS (S3 & EC2)", "Docker", "Kubernetes", "Git", "CI/CD pipelines", "Observability"]
+    },
+    {
+      "name": "Generative AI & LLM",
+      "items": [
+        "LangChain",
+        "RAG",
+        "Embeddings",
+        "Pinecone",
+        "Langfuse",
+        "MCP",
+        "GenAI Application Development",
+        "Fine-tuning",
+        "LangGraph"
+      ]
+    },
+    {
+      "name": "AI-Assisted Development",
+      "items": ["Cursor", "Claude"]
+    }
+  ]
+}

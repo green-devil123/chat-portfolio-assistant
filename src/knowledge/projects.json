@@ -1,0 +1,128 @@
+[
+  {
+    "id": "ai-knowledge-assistant",
+    "name": "AI Knowledge Assistant",
+    "category": "Generative AI",
+    "description": "RAG-based system: a Retrieval-Augmented Generation system enabling natural language querying over unstructured enterprise documents using embeddings and semantic search.",
+    "technologies": ["Embeddings", "Semantic search"],
+    "contributions": [
+      "Implemented orchestration pipelines featuring prompt engineering, token optimization, and multi-agent workflow automation."
+    ]
+  },
+  {
+    "id": "ai-bug-task-management",
+    "name": "AI Bug Task Management",
+    "category": "Generative AI",
+    "description": "Intelligent task assignment tool integrated with Redmine that analyzes inbound bug reports.",
+    "technologies": ["Redmine"],
+    "contributions": [
+      "Automatically routes engineering tasks to the most optimal developer based on historical project association."
+    ]
+  },
+  {
+    "id": "lending-platform-modernization",
+    "name": "Lending Platform Modernization",
+    "category": "Professional",
+    "org": "Stashfin",
+    "role": "Senior Software Engineer",
+    "description": "Migrated the legacy PHP monolith of the lending platform to a microservices architecture.",
+    "architecture": "Microservices",
+    "technologies": ["PHP"],
+    "impact": "Reduced API latency by 80% (from 1.5s to 300ms) and decreased production incidents by 70%."
+  },
+  {
+    "id": "financial-product-backend-services",
+    "name": "Financial Product Backend Services",
+    "category": "Professional",
+    "org": "Stashfin",
+    "role": "Senior Software Engineer",
+    "description": "High-throughput backend services for multiple financial products (Personal Loan, LOC, LAMF), with responsive user interfaces integrating DigiLocker, CKYC, and Account Aggregator services.",
+    "technologies": ["Tailwind CSS", "DigiLocker", "CKYC", "Account Aggregator"],
+    "contributions": [
+      "Built responsive user interfaces with Tailwind CSS, integrating DigiLocker, CKYC, and Account Aggregator services to reduce customer onboarding time by 35%."
+    ],
+    "impact": "Improved conversion by 2× and grew monthly disbursals to ₹500 Cr."
+  },
+  {
+    "id": "price-optimization-saas",
+    "name": "Price-Optimization SaaS Platform",
+    "category": "Professional",
+    "org": "Zintellix",
+    "role": "Senior Full Stack Developer",
+    "description": "Scalable price-optimization SaaS platform enabling data-driven pricing decisions, supporting 10k+ daily transactions with high reliability and performance.",
+    "contributions": [
+      "Led a team of 4 engineers to architect and launch a scalable price-optimization SaaS platform, improving pricing accuracy by 22% and driving rapid customer adoption.",
+      "Designed and implemented pricing algorithms and comparative analytics workflows enabling data-driven pricing decisions.",
+      "Established engineering best practices, driving Unit Testing (Jest) and robust DevOps workflows to reduce deployment failures by 30% and optimize application stability."
+    ],
+    "impact": "Improved pricing accuracy by 22% and reduced deployment failures by 30%."
+  },
+  {
+    "id": "empower-pryzm",
+    "name": "Empower Pryzm",
+    "category": "Professional",
+    "org": "Lumiq.ai",
+    "role": "Full Stack Developer",
+    "description": "Event-driven observability platform conceptualized and deployed.",
+    "architecture": "Event-driven",
+    "impact": "Improved incident detection and resolution efficiency by 40%."
+  },
+  {
+    "id": "term-insurance-isnp",
+    "name": "Term Insurance ISNP Platform",
+    "category": "Professional",
+    "org": "Lumiq.ai",
+    "role": "Full Stack Developer",
+    "description": "Term Insurance ISNP platform supporting 28 products and 40+ RESTful APIs.",
+    "architecture": "Microservices",
+    "technologies": ["RESTful APIs", "Strapi CMS"],
+    "contributions": [
+      "Integrated Strapi CMS to enable configurable product workflows, reducing customization and rollout time by 25%."
+    ],
+    "impact": "Reduced API latency from 4s to 1s."
+  },
+  {
+    "id": "data-processing-applications",
+    "name": "Data-Processing Applications",
+    "category": "Professional",
+    "org": "Lumiq.ai",
+    "role": "Full Stack Developer",
+    "description": "Data-processing applications covering Ontology, Data Mapping, Transformation, and Integration, enabling automated workflows.",
+    "impact": "Reduced manual debugging efforts by 30%."
+  },
+  {
+    "id": "backpac",
+    "name": "BackPac",
+    "category": "Professional",
+    "org": "Manprax Software LLP",
+    "description": "Event Engagement Platform delivered using modern front-end frameworks and cloud databases."
+  },
+  {
+    "id": "gates-forum",
+    "name": "Gates Forum",
+    "category": "Professional",
+    "org": "Manprax Software LLP",
+    "description": "Bidding & Sales Platform delivered using modern front-end frameworks and cloud databases."
+  },
+  {
+    "id": "llf-isli-dashboards",
+    "name": "LLF & ISLI Dashboards",
+    "category": "Professional",
+    "org": "Manprax Software LLP",
+    "description": "Dashboards for real-time educational data visualization."
+  },
+  {
+    "id": "humanital-job-portal",
+    "name": "Humanital Job Portal",
+    "category": "Professional",
+    "org": "Manprax Software LLP",
+    "description": "Job portal engineered with integrated user profiles."
+  },
+  {
+    "id": "dcPCR-portal",
+    "name": "DCPCR Portal",
+    "category": "Professional",
+    "org": "Manprax Software LLP",
+    "description": "Internal workflow automation platform for government compliance."
+  }
+]
