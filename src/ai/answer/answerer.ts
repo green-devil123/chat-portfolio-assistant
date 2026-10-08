@@ -1,4 +1,8 @@
+import skillsData from '../../knowledge/skills.json';
+import type { KnowledgeSkills } from '../../types/knowledge.ts';
 import { hasDistinctiveKeywords, retrieve, retrieveFamily, type RetrievedChunk } from '../retrieval/retrieve.ts';
+
+const skills = skillsData as unknown as KnowledgeSkills;
 
 export type GroundedAnswer = {
   text: string;
@@ -68,7 +72,35 @@ function buildUnits(hits: RetrievedChunk[]): Unit[] {
   return units.sort((a, b) => b.score - a.score);
 }
 
+const SKILLS_ANCHOR =
+  /\b(project|projects|built|experience|role|company|job|education|degree|college|internship|highlight)\b/i;
+
+function wantsFullSkills(question: string): boolean {
+  const q = question.toLowerCase();
+  if (SKILLS_ANCHOR.test(q)) return false;
+  return (
+    /\bskill/.test(q) ||
+    /\btech\s*stack\b|\btechnology\s*stack\b/.test(q) ||
+    /\byour\s+(stack|toolkit|tool\s*stack)\b/.test(q) ||
+    (/\btechnolog(y|ies)\b|\btools?\b/.test(q) &&
+      /\b(work\s+with|know|familiar\w*|comfortable|expertise|use[sd]?|using|daily)\b/.test(q))
+  );
+}
+
+function formatFullSkills(): string {
+  const total = skills.groups.reduce((sum, group) => sum + group.items.length, 0);
+  const lines = [`Skill inventory — ${total} tools across ${skills.groups.length} domains:`];
+  for (const group of skills.groups) {
+    lines.push('', `// ${group.name.toUpperCase()}`, ...group.items.map((item) => `• ${item}`));
+  }
+  return lines.join('\n');
+}
+
 export async function answerQuestion(question: string): Promise<GroundedAnswer> {
+  if (wantsFullSkills(question)) {
+    return { text: formatFullSkills(), grounded: true };
+  }
+
   const hits = retrieve(question, 8);
   const distinctive = hasDistinctiveKeywords(question);
   const confidence = distinctive ? CONFIDENCE : CONFIDENCE_STRONG;

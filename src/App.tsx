@@ -10,6 +10,7 @@ import { RightPanel } from './components/layout/RightPanel';
 import { ContactsView } from './components/views/ContactsView';
 import { EducationView } from './components/views/EducationView';
 import { ProjectsView } from './components/views/ProjectsView';
+import { SkillsView } from './components/views/SkillsView';
 import { useChat } from './hooks/useChat';
 import { useNavigation } from './hooks/useNavigation';
 
@@ -50,6 +51,8 @@ export default function App() {
               <ProjectsView />
             ) : view === 'education' ? (
               <EducationView />
+            ) : view === 'skills' ? (
+              <SkillsView />
             ) : (
               <ContactsView />
             )}

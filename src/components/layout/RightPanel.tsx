@@ -10,6 +10,7 @@ const VIEW_LABELS: Record<View, string> = {
   home: 'Assistant_Terminal',
   projects: 'Projects_Directory',
   education: 'Education_Log',
+  skills: 'Skills_Matrix',
   contacts: 'Contact_Registry',
 };
 

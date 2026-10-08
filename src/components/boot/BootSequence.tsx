@@ -9,6 +9,7 @@ type Step =
 type Row = { id: number; text: string };
 
 const BAR_WIDTH = 20;
+const BOOT_TIMING_SCALE = 3;
 
 const ok = (label: string) => label.padEnd(39, '.') + ' [ OK ]';
 
@@ -134,25 +135,27 @@ export function BootSequence({ onDone }: BootSequenceProps) {
 
         if (step.kind === 'line') {
           append(step.text);
-          await sleep(step.wait ?? 110);
+          await sleep((step.wait ?? 110) * BOOT_TIMING_SCALE);
         } else if (step.kind === 'gap') {
           append('');
-          await sleep(step.wait ?? 60);
+          await sleep((step.wait ?? 60) * BOOT_TIMING_SCALE);
         } else if (step.kind === 'mem') {
-          const ticks = Math.max(1, Math.ceil(step.duration / 30));
+          const duration = step.duration * BOOT_TIMING_SCALE;
+          const ticks = Math.max(1, Math.ceil(duration / 30));
           for (let i = 1; i <= ticks; i++) {
             if (cancelled || skipRef.current) break;
             const value = Math.round((step.target * i) / ticks / 1024) * 1024;
             setPartial(`${step.label}: ${String(value).padStart(7, '0')} KB`);
-            await sleep(step.duration / ticks);
+            await sleep(duration / ticks);
           }
           if (cancelled) return;
           if (skipRef.current) break;
           setPartial(null);
           append(finalize(step));
-          await sleep(20);
+          await sleep(20 * BOOT_TIMING_SCALE);
         } else {
-          const ticks = Math.max(1, Math.ceil(step.duration / 40));
+          const duration = step.duration * BOOT_TIMING_SCALE;
+          const ticks = Math.max(1, Math.ceil(duration / 40));
           for (let i = 1; i <= ticks; i++) {
             if (cancelled || skipRef.current) break;
             const pct = Math.round((i / ticks) * 100);
@@ -160,13 +163,13 @@ export function BootSequence({ onDone }: BootSequenceProps) {
             setPartial(
               `${step.label} [${'█'.repeat(filled)}${'░'.repeat(BAR_WIDTH - filled)}] ${pct}%`,
             );
-            await sleep(step.duration / ticks);
+            await sleep(duration / ticks);
           }
           if (cancelled) return;
           if (skipRef.current) break;
           setPartial(null);
           append(finalize(step));
-          await sleep(30);
+          await sleep(30 * BOOT_TIMING_SCALE);
         }
       }
 

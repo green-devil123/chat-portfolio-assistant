@@ -1,4 +1,4 @@
-export type View = 'home' | 'projects' | 'education' | 'contacts';
+export type View = 'home' | 'projects' | 'education' | 'skills' | 'contacts';
 
 export type Role = 'user' | 'assistant';
 

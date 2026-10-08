@@ -23,7 +23,7 @@ export function ChatMessage({ message, separated = false }: ChatMessageProps) {
         className={
           isUser
             ? 'mt-3 max-w-[85%] border-r-2 border-gold/70 bg-gold/[0.05] px-4 py-2.5 display-md text-right text-[1.05rem] text-ivory-dim'
-            : 'mt-3 whitespace-pre-wrap text-[0.95rem] leading-[1.7] text-ivory phosphor-text'
+            : 'mt-3 whitespace-pre-wrap text-[0.95rem] leading-[1.7] text-gold-bright phosphor-text'
         }
       >
         {message.content}

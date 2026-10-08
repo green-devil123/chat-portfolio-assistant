@@ -71,6 +71,25 @@ export function ContactsIcon({ className = '' }: { className?: string }) {
   );
 }
 
+export function SkillsIcon({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="6.5" y="6.5" width="11" height="11" rx="1" />
+      <rect x="10" y="10" width="4" height="4" />
+      <path d="M9 3.5v3M15 3.5v3M9 17.5v3M15 17.5v3M3.5 9h3M3.5 15h3M17.5 9h3M17.5 15h3" />
+    </svg>
+  );
+}
+
 export function MenuIcon({ className = '' }: { className?: string }) {
   return (
     <svg
