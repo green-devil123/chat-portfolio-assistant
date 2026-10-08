@@ -340,6 +340,12 @@
 
 @media (min-width: 1024px) and (max-height: 760px) {
   .left-sidebar-inner {
+    padding-block: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 680px) {
+  .left-sidebar-inner {
     padding-block: 1rem;
   }
 
