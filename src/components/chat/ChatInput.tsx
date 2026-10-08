@@ -43,7 +43,8 @@ export function ChatInput({
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === 'Enter' && !event.shiftKey) {
+    const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (event.key === 'Enter' && !event.shiftKey && !isTouchDevice) {
       event.preventDefault();
       submit();
     }
@@ -67,6 +68,7 @@ export function ChatInput({
             onChange={handleChange}
             onKeyDown={handleKeyDown}
             rows={1}
+            enterKeyHint="enter"
             aria-label="Ask a question about Tarun"
             placeholder={placeholder}
             className="max-h-32 min-h-[2.25rem] flex-1 resize-none bg-transparent py-1.5 text-[0.95rem] leading-relaxed text-gold outline-none placeholder:text-ivory-muted"
