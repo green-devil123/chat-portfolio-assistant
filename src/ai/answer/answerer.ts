@@ -96,7 +96,19 @@ function formatFullSkills(): string {
   return lines.join('\n');
 }
 
+const GREETING_RE = /^(?:hi+|hello+|hey+|greetings|yo)(?:\s+(?:there\s+)?tarun)?[!.,?\s]*$/i;
+
+function greetingReply(question: string): string | null {
+  if (!GREETING_RE.test(question.trim())) return null;
+  return '**👋 Hey! Welcome to the Tarun Era.**\n\n**I’m Tarun’s AI portfolio assistant — ask me anything about his journey, projects, GenAI work, or tech stack. 🚀**';
+}
+
 export async function answerQuestion(question: string): Promise<GroundedAnswer> {
+  const greeting = greetingReply(question);
+  if (greeting) {
+    return { text: greeting, grounded: true };
+  }
+
   if (wantsFullSkills(question)) {
     return { text: formatFullSkills(), grounded: true };
   }

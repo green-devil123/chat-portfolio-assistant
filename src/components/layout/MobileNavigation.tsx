@@ -63,7 +63,7 @@ export function MobileNavigation({ activeView, onNavigate }: MobileNavigationPro
             role="dialog"
             aria-modal="true"
             aria-label="Navigation"
-            className="panel-scroll absolute inset-y-0 left-0 flex w-[17.5rem] max-w-[85vw] flex-col border-r-2 border-line bg-ink-soft shadow-2xl"
+            className="panel-scroll scrollbar-hidden absolute inset-y-0 left-0 flex w-[17.5rem] max-w-[85vw] flex-col border-r-2 border-line bg-ink-soft shadow-2xl"
           >
             <button
               type="button"

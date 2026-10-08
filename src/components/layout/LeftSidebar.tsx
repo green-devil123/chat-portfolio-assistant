@@ -32,11 +32,11 @@ const CUT_SMALL =
 
 function NavList({ activeView, onNavigate }: NavProps) {
   return (
-    <nav aria-label="Primary navigation" className="px-1" onKeyDown={handleListKeyDown}>
-      <p className="eyebrow eyebrow--muted mb-3 px-3 text-[0.62rem] tracking-[0.32em]">
+    <nav aria-label="Primary navigation" className="left-sidebar-nav px-1" onKeyDown={handleListKeyDown}>
+      <p className="left-sidebar-nav-label eyebrow eyebrow--muted mb-3 px-3 text-[0.62rem] tracking-[0.32em]">
         // Nav_Menu
       </p>
-      <ul className="flex flex-col gap-1.5">
+      <ul className="left-sidebar-nav-list flex flex-col gap-1.5">
         {NAV_ITEMS.map(({ id, label, icon: Icon }, index) => {
           const isActive = activeView === id;
           return (
@@ -46,7 +46,7 @@ function NavList({ activeView, onNavigate }: NavProps) {
                 onClick={() => onNavigate(id)}
                 aria-current={isActive ? 'page' : undefined}
                 className={[
-                  'group flex w-full items-center gap-3 px-3 py-3 text-left',
+                  'left-sidebar-nav-button group flex w-full items-center gap-3 px-3 py-3 text-left',
                   'text-[0.82rem] uppercase tracking-[0.2em] transition-colors duration-200',
                   isActive
                     ? 'phosphor-text border-2 border-gold bg-gold/[0.06] text-gold shadow-[0_0_8px_rgb(0_255_65/0.18)]'
@@ -96,12 +96,12 @@ function Brand({ showBrand }: BrandProps) {
         </div>
       )}
 
-      <div className="hidden border-2 border-line bg-gold/[0.02] lg:block" style={{ clipPath: CUT_SMALL }}>
-        <div className="border-b-2 border-line px-4 py-1.5 text-[0.64rem] tracking-[0.34em] text-gold phosphor-text">
+      <div className="left-sidebar-brand-card hidden border-2 border-line bg-gold/[0.02] lg:block" style={{ clipPath: CUT_SMALL }}>
+        <div className="left-sidebar-brand-heading border-b-2 border-line px-4 py-1.5 text-[0.64rem] tracking-[0.34em] text-gold phosphor-text">
           IDENTITY_CARD
         </div>
-        <div className="flex items-center gap-3 px-3.5 pt-4 pb-2">
-          <LogoMark size={56} />
+        <div className="left-sidebar-brand-main flex items-center gap-3 px-3.5 pt-4 pb-2">
+          <LogoMark size={48} />
           <div className="min-w-0">
             <h1 className="display-lg text-[1.35rem] leading-[0.95] tracking-[0.08em] text-ivory">
               <span className="block">Tarun</span>
@@ -109,12 +109,12 @@ function Brand({ showBrand }: BrandProps) {
             </h1>
           </div>
         </div>
-        <p className="px-3.5 pb-4 text-[0.64rem] uppercase leading-relaxed tracking-[0.14em] text-ivory-muted phosphor-text">
+        <p className="left-sidebar-brand-role px-3.5 pb-4 text-[0.64rem] uppercase leading-relaxed tracking-[0.14em] text-ivory-muted phosphor-text">
           GenAI Full Stack Engineer
         </p>
       </div>
 
-      <div className="rule my-6" />
+      <div className="left-sidebar-brand-rule rule my-6" />
     </div>
   );
 }
@@ -127,7 +127,7 @@ function SystemStatus() {
 
   return (
     <div
-      className="mx-1 border-2 border-line bg-gold/[0.02]"
+      className="left-sidebar-status mx-1 border-2 border-line bg-gold/[0.02]"
       style={{ clipPath: CUT_SMALL }}
       aria-label="System status"
     >
@@ -159,17 +159,17 @@ function SystemStatus() {
 export function LeftSidebar({ activeView, onNavigate }: NavProps) {
   return (
     <aside
-      className="panel-scroll hidden h-full w-[18.5rem] shrink-0 flex-col border-r-2 border-line bg-ink-soft lg:flex"
+      className="left-sidebar hidden h-full w-[18.5rem] shrink-0 flex-col overflow-hidden border-r-2 border-line bg-ink-soft lg:flex"
       aria-label="Sidebar"
     >
-      <div className="flex flex-1 flex-col px-4 pt-8 pb-7">
+      <div className="left-sidebar-inner flex flex-1 flex-col px-4 pt-8 pb-7">
         <Brand />
         <NavList activeView={activeView} onNavigate={onNavigate} />
-        <div className="mt-auto pt-8">
+        <div className="left-sidebar-status-wrap mt-auto pt-8">
           <SystemStatus />
         </div>
       </div>
-      <div className="border-t-2 border-line-soft px-6 py-5">
+      <div className="left-sidebar-footer border-t-2 border-line-soft px-6 py-5">
         <p className="eyebrow eyebrow--muted text-[0.66rem] tracking-[0.26em]">
           SYS: PORTFOLIO_ASSISTANT
         </p>

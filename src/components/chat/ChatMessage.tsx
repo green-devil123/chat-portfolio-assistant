@@ -5,6 +5,15 @@ type ChatMessageProps = {
   separated?: boolean;
 };
 
+function formatAssistantMessage(content: string) {
+  return content.split(/(\*\*.+?\*\*)/gs).map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
 export function ChatMessage({ message, separated = false }: ChatMessageProps) {
   const isUser = message.role === 'user';
 
@@ -26,7 +35,7 @@ export function ChatMessage({ message, separated = false }: ChatMessageProps) {
             : 'mt-3 whitespace-pre-wrap text-[0.95rem] leading-[1.7] text-gold-bright phosphor-text'
         }
       >
-        {message.content}
+        {isUser ? message.content : formatAssistantMessage(message.content)}
         {isUser && (
           <span className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.1em] bg-gold animate-blink" aria-hidden="true" />
         )}
