@@ -31,9 +31,15 @@ export function ChatInput({
     if (!canSend) return;
     onSubmit(value);
     setValue('');
-    if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
-      textareaRef.current.focus();
+    const textarea = textareaRef.current;
+    if (textarea) {
+      textarea.style.height = 'auto';
+      const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+      if (isTouchDevice) {
+        textarea.blur();
+      } else {
+        textarea.focus();
+      }
     }
   };
 
