@@ -8,16 +8,18 @@ export function SuggestedQuestions({ questions, onSelect }: SuggestedQuestionsPr
 
   return (
     <div className="mx-auto mt-11 w-full max-w-xl text-left">
-      <div className="rule mb-4" />
+      <p className="eyebrow eyebrow--muted mb-4 text-[0.68rem] tracking-[0.3em]">
+        // Suggested_Queries
+      </p>
       <ul className="flex flex-col">
         {questions.map((question) => {
           const body = (
             <>
               <span
                 aria-hidden="true"
-                className="mt-[0.3rem] font-display text-lg leading-none text-gold/70"
+                className="mt-[0.15rem] font-terminal text-lg leading-none text-gold phosphor-text"
               >
-                &ldquo;
+                ❯
               </span>
               <span className="display-md text-[1.02rem] text-ivory-dim">{question}</span>
             </>
@@ -29,7 +31,7 @@ export function SuggestedQuestions({ questions, onSelect }: SuggestedQuestionsPr
                 <button
                   type="button"
                   onClick={() => onSelect(question)}
-                  className="group flex w-full items-start gap-3 border-l-2 border-transparent px-3 py-2 text-left transition-colors duration-200 hover:border-gold/50 hover:bg-white/[0.02] hover:text-ivory"
+                  className="group flex w-full items-start gap-3 border-2 border-transparent px-3 py-2 text-left transition-colors duration-200 hover:border-line hover:bg-gold/[0.04] hover:text-ivory"
                 >
                   {body}
                 </button>

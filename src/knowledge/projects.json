@@ -1,22 +1,49 @@
+
 [
   {
     "id": "ai-knowledge-assistant",
     "name": "AI Knowledge Assistant",
     "category": "Generative AI",
-    "description": "RAG-based system: a Retrieval-Augmented Generation system enabling natural language querying over unstructured enterprise documents using embeddings and semantic search.",
-    "technologies": ["Embeddings", "Semantic search"],
+    "description": "Built a Retrieval-Augmented Generation (RAG) based enterprise knowledge assistant that enables users to query unstructured documents using natural language. The system processes documents, generates embeddings, performs semantic similarity search, retrieves relevant context, and uses an LLM to generate grounded responses. Designed orchestration pipelines to coordinate retrieval, context preparation, prompt execution, and response generation. Applied prompt engineering and token optimization techniques to improve response quality and reduce unnecessary context sent to the LLM. Implemented multi-agent workflow automation for complex knowledge retrieval and reasoning tasks.",
+    "technologies": [
+      "RAG",
+      "Embeddings",
+      "Semantic Search",
+      "Vector Database",
+      "LLM",
+      "Prompt Engineering",
+      "Token Optimization",
+      "Multi-Agent Workflows"
+    ],
     "contributions": [
-      "Implemented orchestration pipelines featuring prompt engineering, token optimization, and multi-agent workflow automation."
+      "Designed and implemented RAG orchestration pipelines for enterprise document querying.",
+      "Implemented document retrieval and semantic search workflows using embeddings.",
+      "Applied prompt engineering techniques to improve LLM response accuracy and consistency.",
+      "Optimized retrieved context and token usage to control LLM costs and improve response efficiency.",
+      "Implemented multi-agent workflow automation for complex retrieval and reasoning tasks.",
+      "Designed the workflow to ground LLM responses in retrieved enterprise knowledge and reduce unsupported responses."
     ]
   },
   {
     "id": "ai-bug-task-management",
     "name": "AI Bug Task Management",
     "category": "Generative AI",
-    "description": "Intelligent task assignment tool integrated with Redmine that analyzes inbound bug reports.",
-    "technologies": ["Redmine"],
+    "description": "Built an AI-powered engineering task management system integrated with Redmine that analyzes incoming bug reports and automatically recommends the most suitable developer for each task. The system analyzes bug descriptions, identifies relevant project and technical context, and compares the issue against historical developer-task associations to determine the best assignment.",
+    "technologies": [
+      "Generative AI",
+      "Redmine",
+      "LLM",
+      "Natural Language Processing",
+      "Historical Data Analysis",
+      "Task Classification"
+    ],
     "contributions": [
-      "Automatically routes engineering tasks to the most optimal developer based on historical project association."
+      "Integrated the system with Redmine to process incoming engineering bug reports.",
+      "Analyzed bug descriptions and extracted relevant technical and project context.",
+      "Built task classification workflows to identify the affected module, technology, and type of issue.",
+      "Analyzed historical project associations to determine developer expertise and previous ownership.",
+      "Implemented developer ranking logic to recommend the most suitable engineer for a new bug.",
+      "Automated task-assignment recommendations to reduce manual effort for engineering leads."
     ]
   },
   {
@@ -25,10 +52,29 @@
     "category": "Professional",
     "org": "Stashfin",
     "role": "Senior Software Engineer",
-    "description": "Migrated the legacy PHP monolith of the lending platform to a microservices architecture.",
+    "description": "Modernized a legacy PHP monolithic lending platform by decomposing business capabilities into independently deployable backend services. Worked on service boundaries, API design, backend implementation, data access, integration with existing legacy components, and incremental migration from the monolith to a modern microservices architecture. The modernization improved application scalability, maintainability, API performance, and production reliability.",
     "architecture": "Microservices",
-    "technologies": ["PHP"],
-    "impact": "Reduced API latency by 80% (from 1.5s to 300ms) and decreased production incidents by 70%."
+    "technologies": [
+      "Node.js",
+      "Express.js",
+      "PHP",
+      "REST APIs",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Microservices"
+    ],
+    "contributions": [
+      "Analyzed the legacy PHP monolith and identified business capabilities suitable for service decomposition.",
+      "Migrated critical backend functionality from the PHP monolith to Node.js-based services.",
+      "Designed RESTful APIs and service boundaries for independently deployable backend components.",
+      "Implemented backend services for lending workflows while maintaining compatibility with existing legacy systems.",
+      "Improved API performance through service-level optimization, efficient database access, and reduced processing overhead.",
+      "Worked on production reliability, debugging, monitoring, and performance optimization during the migration.",
+      "Reduced API latency by approximately 80%, from 1.5 seconds to 300 milliseconds.",
+      "Reduced production incidents by approximately 70%."
+    ],
+    "impact": "Reduced API latency by 80% from 1.5 seconds to 300 milliseconds and decreased production incidents by 70%."
   },
   {
     "id": "financial-product-backend-services",
@@ -36,12 +82,32 @@
     "category": "Professional",
     "org": "Stashfin",
     "role": "Senior Software Engineer",
-    "description": "High-throughput backend services for multiple financial products (Personal Loan, LOC, LAMF), with responsive user interfaces integrating DigiLocker, CKYC, and Account Aggregator services.",
-    "technologies": ["Tailwind CSS", "DigiLocker", "CKYC", "Account Aggregator"],
-    "contributions": [
-      "Built responsive user interfaces with Tailwind CSS, integrating DigiLocker, CKYC, and Account Aggregator services to reduce customer onboarding time by 35%."
+    "description": "Developed backend services and responsive user interfaces for multiple financial products including Personal Loans, Lines of Credit, and Loan Against Mutual Funds. Implemented customer onboarding workflows and integrated external financial and KYC services such as DigiLocker, CKYC, and Account Aggregator. Worked across frontend and backend layers to improve application performance, customer experience, and loan conversion.",
+    "technologies": [
+      "Node.js",
+      "Express.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "MySQL",
+      "MongoDB",
+      "DigiLocker",
+      "CKYC",
+      "Account Aggregator",
+      "REST APIs"
     ],
-    "impact": "Improved conversion by 2× and grew monthly disbursals to ₹500 Cr."
+    "contributions": [
+      "Developed backend services supporting Personal Loan, LOC, and LAMF financial products.",
+      "Designed and implemented customer onboarding workflows connecting frontend applications with backend services.",
+      "Integrated DigiLocker for digital document retrieval and verification.",
+      "Integrated CKYC services to support customer KYC verification workflows.",
+      "Integrated Account Aggregator services to enable financial-data based customer verification and assessment.",
+      "Built responsive user interfaces using React, TypeScript, and Tailwind CSS.",
+      "Optimized onboarding workflows to reduce customer onboarding time by approximately 35%.",
+      "Worked on API integration, validation, error handling, and end-to-end financial product workflows.",
+      "Improved the overall customer journey and contributed to approximately 2× improvement in conversion."
+    ],
+    "impact": "Improved conversion by approximately 2×, reduced onboarding time by 35%, and contributed to monthly loan disbursals reaching approximately ₹500 Cr."
   },
   {
     "id": "price-optimization-saas",
@@ -49,13 +115,30 @@
     "category": "Professional",
     "org": "Zintellix",
     "role": "Senior Full Stack Developer",
-    "description": "Scalable price-optimization SaaS platform enabling data-driven pricing decisions, supporting 10k+ daily transactions with high reliability and performance.",
-    "contributions": [
-      "Led a team of 4 engineers to architect and launch a scalable price-optimization SaaS platform, improving pricing accuracy by 22% and driving rapid customer adoption.",
-      "Designed and implemented pricing algorithms and comparative analytics workflows enabling data-driven pricing decisions.",
-      "Established engineering best practices, driving Unit Testing (Jest) and robust DevOps workflows to reduce deployment failures by 30% and optimize application stability."
+    "description": "Architected and developed a scalable price-optimization SaaS platform that enables businesses to make data-driven pricing decisions. The platform processes high-volume transactional data, applies pricing algorithms, performs comparative analytics, and provides actionable pricing insights. Led a team of four engineers and worked across architecture, backend services, frontend workflows, testing, and DevOps.",
+    "technologies": [
+      "Node.js",
+      "React",
+      "MongoDB",
+      "MySQL",
+      "REST APIs",
+      "Jest",
+      "CI/CD",
+      "Docker",
+      "AWS"
     ],
-    "impact": "Improved pricing accuracy by 22% and reduced deployment failures by 30%."
+    "contributions": [
+      "Led a team of four engineers to architect and develop the price-optimization SaaS platform.",
+      "Designed scalable backend services capable of supporting more than 10,000 daily transactions.",
+      "Implemented pricing algorithms and comparative analytics workflows for data-driven pricing decisions.",
+      "Developed frontend workflows for visualizing pricing insights and recommendations.",
+      "Designed APIs and data-processing workflows connecting pricing calculations with application features.",
+      "Introduced unit testing practices using Jest to improve code reliability and regression coverage.",
+      "Established DevOps and CI/CD practices to improve deployment consistency.",
+      "Identified and resolved application stability and deployment issues.",
+      "Reduced deployment failures by approximately 30%."
+    ],
+    "impact": "Supported 10,000+ daily transactions, improved pricing accuracy by approximately 22%, and reduced deployment failures by approximately 30%."
   },
   {
     "id": "empower-pryzm",
@@ -63,9 +146,29 @@
     "category": "Professional",
     "org": "Lumiq.ai",
     "role": "Full Stack Developer",
-    "description": "Event-driven observability platform conceptualized and deployed.",
+    "description": "Conceptualized and developed an event-driven observability platform for monitoring application events, system behavior, and operational issues. The platform provided engineering teams with centralized visibility into application events and alerts, helping them identify and troubleshoot production issues faster.",
     "architecture": "Event-driven",
-    "impact": "Improved incident detection and resolution efficiency by 40%."
+    "technologies": [
+      "MERN",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "RabbitMQ",
+      "React Query",
+      "Data Visualization",
+      "Observability"
+    ],
+    "contributions": [
+      "Conceptualized and developed the observability platform from the ground up.",
+      "Designed an event-driven architecture using asynchronous messaging workflows.",
+      "Implemented backend services for collecting, processing, and exposing application events.",
+      "Built React-based dashboards for visualizing application health, events, and operational information.",
+      "Implemented data-fetching and state-management workflows using React Query.",
+      "Integrated monitoring and alerting workflows to help engineering teams identify production issues.",
+      "Worked on event processing and alert workflows to improve operational visibility.",
+      "Mentored two backend engineers and contributed to technical design and implementation decisions."
+    ],
+    "impact": "Improved incident detection and resolution efficiency by approximately 40% and reduced manual debugging effort by approximately 30%."
   },
   {
     "id": "term-insurance-isnp",
@@ -73,13 +176,27 @@
     "category": "Professional",
     "org": "Lumiq.ai",
     "role": "Full Stack Developer",
-    "description": "Term Insurance ISNP platform supporting 28 products and 40+ RESTful APIs.",
+    "description": "Developed a scalable term-insurance ISNP platform supporting 28 insurance products and more than 40 RESTful APIs. The platform provided configurable product workflows and integrations for insurance business processes. Worked across frontend, backend APIs, CMS configuration, and performance optimization.",
     "architecture": "Microservices",
-    "technologies": ["RESTful APIs", "Strapi CMS"],
-    "contributions": [
-      "Integrated Strapi CMS to enable configurable product workflows, reducing customization and rollout time by 25%."
+    "technologies": [
+      "React",
+      "Node.js",
+      "RESTful APIs",
+      "Strapi CMS",
+      "MongoDB",
+      "Microservices"
     ],
-    "impact": "Reduced API latency from 4s to 1s."
+    "contributions": [
+      "Developed and maintained RESTful APIs supporting more than 28 insurance products.",
+      "Worked on backend services supporting insurance product and policy workflows.",
+      "Integrated Strapi CMS to make insurance product configurations and workflows more flexible.",
+      "Reduced dependency on code-level changes for configurable product requirements.",
+      "Developed frontend components and workflows for insurance product journeys.",
+      "Optimized backend APIs and database interactions to improve application response times.",
+      "Reduced API latency from approximately 4 seconds to 1 second.",
+      "Reduced customization and product rollout time by approximately 25% through configurable CMS-driven workflows."
+    ],
+    "impact": "Reduced API latency from 4 seconds to 1 second and reduced customization and rollout time by approximately 25%."
   },
   {
     "id": "data-processing-applications",
@@ -87,42 +204,133 @@
     "category": "Professional",
     "org": "Lumiq.ai",
     "role": "Full Stack Developer",
-    "description": "Data-processing applications covering Ontology, Data Mapping, Transformation, and Integration, enabling automated workflows.",
-    "impact": "Reduced manual debugging efforts by 30%."
+    "description": "Developed data-processing applications covering Ontology, Data Mapping, Transformation, and Integration workflows. The applications enabled teams to process, transform, validate, and integrate data across different systems while providing visibility into processing failures and operational issues.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "REST APIs",
+      "Data Processing",
+      "Data Mapping",
+      "Data Transformation",
+      "Data Integration"
+    ],
+    "contributions": [
+      "Developed frontend interfaces for configuring and monitoring data-processing workflows.",
+      "Implemented backend APIs for data mapping, transformation, and integration operations.",
+      "Worked on ontology-based data processing workflows to establish relationships between business entities and data.",
+      "Implemented validation and transformation logic for data moving between different systems.",
+      "Improved visibility into data-processing failures and debugging information.",
+      "Optimized workflows to reduce repetitive manual investigation and troubleshooting.",
+      "Reduced manual debugging efforts by approximately 30%."
+    ],
+    "impact": "Reduced manual debugging efforts by approximately 30% through automated data-processing and improved operational visibility."
   },
   {
     "id": "backpac",
     "name": "BackPac",
     "category": "Professional",
     "org": "Manprax Software LLP",
-    "description": "Event Engagement Platform delivered using modern front-end frameworks and cloud databases."
+    "description": "Developed an event engagement platform designed to manage and support event-related interactions and workflows. Worked on modern frontend applications, backend APIs, user-facing workflows, and cloud-based data management.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "REST APIs",
+      "Cloud Databases",
+      "JavaScript"
+    ],
+    "contributions": [
+      "Developed responsive frontend interfaces for event-related workflows.",
+      "Implemented backend APIs supporting event engagement functionality.",
+      "Integrated application workflows with cloud-based databases.",
+      "Implemented reusable frontend components to improve development consistency.",
+      "Worked on API integration, data handling, validation, and application performance."
+    ]
   },
   {
     "id": "gates-forum",
     "name": "Gates Forum",
     "category": "Professional",
     "org": "Manprax Software LLP",
-    "description": "Bidding & Sales Platform delivered using modern front-end frameworks and cloud databases."
+    "description": "Developed a bidding and sales platform supporting digital sales workflows and user interactions. Worked across frontend and backend components to implement business workflows, data management, and user-facing features.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "REST APIs",
+      "Cloud Databases",
+      "JavaScript"
+    ],
+    "contributions": [
+      "Developed frontend interfaces for bidding and sales workflows.",
+      "Implemented backend APIs for managing platform data and business operations.",
+      "Implemented user-facing workflows for bidding and sales activities.",
+      "Integrated application services with cloud databases.",
+      "Worked on API integration, validation, error handling, and application performance."
+    ]
   },
   {
     "id": "llf-isli-dashboards",
     "name": "LLF & ISLI Dashboards",
     "category": "Professional",
     "org": "Manprax Software LLP",
-    "description": "Dashboards for real-time educational data visualization."
+    "description": "Developed real-time educational data visualization dashboards that provided users with interactive views of education-related metrics and operational information.",
+    "technologies": [
+      "React",
+      "JavaScript",
+      "REST APIs",
+      "Data Visualization",
+      "Cloud Databases"
+    ],
+    "contributions": [
+      "Developed interactive dashboards for visualizing educational data.",
+      "Implemented reusable data visualization components.",
+      "Integrated dashboard interfaces with backend APIs and cloud databases.",
+      "Implemented filtering and dynamic data presentation workflows.",
+      "Optimized frontend rendering and data-fetching workflows for responsive dashboard experiences."
+    ]
   },
   {
     "id": "humanital-job-portal",
     "name": "Humanital Job Portal",
     "category": "Professional",
     "org": "Manprax Software LLP",
-    "description": "Job portal engineered with integrated user profiles."
+    "description": "Developed a job portal that enabled users to create and manage professional profiles and interact with job-related workflows. The platform provided integrated user-profile functionality and application management capabilities.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "REST APIs",
+      "Cloud Databases",
+      "JavaScript"
+    ],
+    "contributions": [
+      "Developed user registration and profile-management workflows.",
+      "Implemented frontend interfaces for job-related activities.",
+      "Developed backend APIs for managing user and job data.",
+      "Integrated application workflows with cloud databases.",
+      "Implemented validation and error-handling mechanisms for user interactions."
+    ]
   },
   {
     "id": "dcPCR-portal",
     "name": "DCPCR Portal",
     "category": "Professional",
     "org": "Manprax Software LLP",
-    "description": "Internal workflow automation platform for government compliance."
+    "description": "Developed an internal workflow automation platform supporting government compliance-related processes. The platform digitized operational workflows and enabled users to manage information, submissions, and process-related activities through a centralized application.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "REST APIs",
+      "Cloud Databases",
+      "JavaScript",
+      "Workflow Automation"
+    ],
+    "contributions": [
+      "Developed frontend interfaces for internal compliance workflows.",
+      "Implemented backend APIs for managing workflow and application data.",
+      "Automated repetitive workflow steps to reduce manual processing.",
+      "Implemented data validation and structured process management.",
+      "Integrated the platform with cloud-based data storage.",
+      "Worked on role-based workflows and user-facing operational interfaces."
+    ]
   }
 ]

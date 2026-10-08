@@ -55,9 +55,12 @@ export function ChatInput({
   };
 
   return (
-    <div className="shrink-0 border-t border-line bg-ink px-5 pb-5 pt-4 sm:px-10">
+    <div className="shrink-0 border-t-2 border-line bg-ink px-5 pb-5 pt-4 sm:px-10">
       <form onSubmit={handleSubmit} className="mx-auto w-full max-w-2xl">
-        <div className="surface surface--raised flex items-end gap-2 px-3 py-2 transition-colors focus-within:border-gold/45">
+        <div className="surface surface--raised flex items-end gap-2 px-3 py-2">
+          <span className="pb-2 font-terminal text-[1rem] leading-none tracking-widest text-gold" aria-hidden="true">
+            ❯
+          </span>
           <textarea
             ref={textareaRef}
             value={value}
@@ -66,13 +69,17 @@ export function ChatInput({
             rows={1}
             aria-label="Ask a question about Tarun"
             placeholder={placeholder}
-            className="max-h-32 min-h-[2.25rem] flex-1 resize-none bg-transparent py-1.5 text-[0.95rem] leading-relaxed text-ivory outline-none placeholder:text-ivory-muted/55"
+            className="max-h-32 min-h-[2.25rem] flex-1 resize-none bg-transparent py-1.5 text-[0.95rem] leading-relaxed text-gold outline-none placeholder:text-ivory-muted"
           />
           <button
             type="submit"
             aria-label="Send question"
             disabled={!canSend}
-            className="mb-0.5 flex h-8 w-8 shrink-0 items-center justify-center border border-gold/40 text-gold transition-colors hover:bg-gold/10 disabled:cursor-not-allowed disabled:border-line disabled:text-ivory-muted/40"
+            className="mb-0.5 flex h-8 w-8 shrink-0 items-center justify-center border-2 border-gold text-gold transition-colors hover:bg-gold/15 disabled:cursor-not-allowed disabled:border-line disabled:text-ivory-muted/70"
+            style={{
+              clipPath:
+                'polygon(0 4px, 4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px))',
+            }}
           >
             <ArrowUpIcon className="h-4 w-4" />
           </button>

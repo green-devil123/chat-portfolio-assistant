@@ -2,6 +2,8 @@ import { useCallback, useRef, useState } from 'react';
 import { answerQuestion } from '../ai/answer/answerer';
 import type { ChatState } from '../types';
 
+const WORD_REVEAL_DELAY_MS = 40;
+
 function createId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`;
 }
@@ -25,18 +27,34 @@ export function useChat() {
 
     inFlight.current += 1;
     setIsAnswering(true);
+    let answerText: string;
     try {
-      const answer = await answerQuestion(content);
-      setState((prev) => ({
-        ...prev,
-        messages: [
-          ...prev.messages,
-          { id: createId(), role: 'assistant' as const, content: answer.text },
-        ],
-      }));
+      answerText = (await answerQuestion(content)).text;
     } finally {
       inFlight.current -= 1;
       if (inFlight.current === 0) setIsAnswering(false);
+    }
+
+    const words = answerText.match(/\S+\s*/g) ?? [];
+    const assistantMessageId = createId();
+    let visibleText = words[0] ?? answerText;
+    setState((prev) => ({
+      ...prev,
+      messages: [
+        ...prev.messages,
+        { id: assistantMessageId, role: 'assistant', content: visibleText },
+      ],
+    }));
+
+    for (let index = 1; index < words.length; index += 1) {
+      await new Promise<void>((resolve) => window.setTimeout(resolve, WORD_REVEAL_DELAY_MS));
+      visibleText += words[index];
+      setState((prev) => ({
+        ...prev,
+        messages: prev.messages.map((message) =>
+          message.id === assistantMessageId ? { ...message, content: visibleText } : message,
+        ),
+      }));
     }
   }, []);
 

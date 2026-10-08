@@ -26,7 +26,7 @@ function ExternalIcon({ className = '' }: { className?: string }) {
 function DetailRow({ label, value, href }: { label: string; value: string; href?: string }) {
   const content = (
     <>
-      <span className="eyebrow eyebrow--muted shrink-0 text-[0.6rem]">{label}</span>
+      <span className="eyebrow eyebrow--muted shrink-0 text-[0.68rem]">{label}</span>
       <span className="text-[1rem] text-ivory-dim">{value}</span>
     </>
   );
@@ -54,17 +54,17 @@ function LinkCard({ link }: { link: KnowledgeContactLink }) {
       href={link.url}
       target="_blank"
       rel="noreferrer"
-      className="surface group flex items-center justify-between gap-4 p-5 transition-colors hover:border-gold/50"
+      className="surface group flex items-center justify-between gap-4 p-5"
     >
       <span>
-        <span className="block text-[0.7rem] uppercase tracking-[0.22em] text-ivory-muted">
+        <span className="block text-[0.74rem] uppercase tracking-[0.22em] text-ivory-muted">
           Profile
         </span>
         <span className="display-md mt-1 block text-xl text-ivory transition-colors group-hover:text-gold-bright">
           {link.label}
         </span>
       </span>
-      <ExternalIcon className="h-5 w-5 text-gold/70 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <ExternalIcon className="h-5 w-5 text-gold/85 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
     </a>
   );
 }
@@ -86,7 +86,7 @@ export function ContactsView() {
         </section>
 
         <section aria-label="Profiles" className="mt-10">
-          <p className="eyebrow eyebrow--muted text-[0.6rem]">Profiles</p>
+          <p className="eyebrow eyebrow--muted text-[0.68rem]">Profiles</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {contact.links.map((link) => (
               <LinkCard key={link.label} link={link} />

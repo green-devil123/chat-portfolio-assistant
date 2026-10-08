@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { BootSequence } from './components/boot/BootSequence';
 import { ChatInput } from './components/chat/ChatInput';
 import { ChatWindow } from './components/chat/ChatWindow';
 import { DEFAULT_SUGGESTIONS } from './components/home/defaultSuggestions';
@@ -14,9 +16,12 @@ import { useNavigation } from './hooks/useNavigation';
 export default function App() {
   const { view, navigate } = useNavigation();
   const chat = useChat();
+  const [booting, setBooting] = useState(true);
 
   return (
-    <div className="h-full bg-ink text-ivory">
+    <div className="crt h-full bg-ink text-ivory">
+      {booting && <BootSequence onDone={() => setBooting(false)} />}
+
       <MobileNavigation activeView={view} onNavigate={navigate} />
 
       <div className="flex h-full pt-14 lg:pt-0">
@@ -37,7 +42,7 @@ export default function App() {
                 <ChatInput
                   onSubmit={chat.sendMessage}
                   placeholder={
-                    chat.hasStarted ? 'Ask another question…' : 'Ask something about Tarun…'
+                    chat.hasStarted ? 'ENTER QUERY...' : 'ENTER QUERY ABOUT TARUN...'
                   }
                 />
               </div>

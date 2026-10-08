@@ -34,7 +34,7 @@ export function MobileNavigation({ activeView, onNavigate }: MobileNavigationPro
 
   return (
     <div className="lg:hidden">
-      <header className="fixed inset-x-0 top-0 z-40 flex h-14 items-center justify-between border-b border-line bg-ink-soft/95 px-4 backdrop-blur">
+      <header className="fixed inset-x-0 top-0 z-40 flex h-14 items-center justify-between border-b-2 border-line bg-ink-soft/95 px-4 backdrop-blur">
         <button
           type="button"
           onClick={() => setIsOpen(true)}
@@ -44,9 +44,12 @@ export function MobileNavigation({ activeView, onNavigate }: MobileNavigationPro
         >
           <MenuIcon className="h-5 w-5" />
         </button>
-        <span className="display-lg text-lg text-ivory">Tarun Agarwal</span>
+        <span className="display-lg text-lg text-ivory phosphor-text">Tarun Agarwal</span>
         <span className="h-10 w-10" aria-hidden="true" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gold/20" aria-hidden="true" />
+        <div
+          className="absolute inset-x-0 bottom-0 h-0.5 bg-gold/30"
+          aria-hidden="true"
+        />
       </header>
 
       {isOpen && (
@@ -60,7 +63,7 @@ export function MobileNavigation({ activeView, onNavigate }: MobileNavigationPro
             role="dialog"
             aria-modal="true"
             aria-label="Navigation"
-            className="panel-scroll absolute inset-y-0 left-0 flex w-[17.5rem] max-w-[85vw] flex-col border-r border-line bg-ink-soft shadow-2xl"
+            className="panel-scroll absolute inset-y-0 left-0 flex w-[17.5rem] max-w-[85vw] flex-col border-r-2 border-line bg-ink-soft shadow-2xl"
           >
             <button
               type="button"
@@ -71,9 +74,9 @@ export function MobileNavigation({ activeView, onNavigate }: MobileNavigationPro
               <CloseIcon className="h-5 w-5" />
             </button>
             <LeftSidebarContent activeView={activeView} onNavigate={handleNavigate} />
-            <div className="mt-auto border-t border-line-soft px-6 py-5">
-              <p className="eyebrow eyebrow--muted text-[0.6rem] tracking-[0.24em] text-ivory-muted/60">
-                Portfolio &amp; Assistant
+            <div className="mt-auto border-t-2 border-line-soft px-6 py-5">
+              <p className="eyebrow eyebrow--muted text-[0.68rem] tracking-[0.24em]">
+                SYS: PORTFOLIO_ASSISTANT v1.0
               </p>
             </div>
           </div>

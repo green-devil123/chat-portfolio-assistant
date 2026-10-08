@@ -10,11 +10,11 @@ type ChatWindowProps = {
 function AnswerPending() {
   return (
     <div role="status" aria-label="Assistant is answering" className="panel-enter">
-      <p className="eyebrow text-[0.6rem]">AI Assistant</p>
+      <p className="eyebrow text-[0.75rem]">◈ SYSTEM_AI</p>
       <div className="mt-3 flex items-center gap-1.5" aria-hidden="true">
-        <span className="typing-dot h-1.5 w-1.5 rounded-full bg-gold" />
-        <span className="typing-dot h-1.5 w-1.5 rounded-full bg-gold" />
-        <span className="typing-dot h-1.5 w-1.5 rounded-full bg-gold" />
+        <span className="typing-dot h-1.5 w-1.5 bg-gold" />
+        <span className="typing-dot h-1.5 w-1.5 bg-gold" />
+        <span className="typing-dot h-1.5 w-1.5 bg-gold" />
       </div>
     </div>
   );
@@ -22,17 +22,20 @@ function AnswerPending() {
 
 export function ChatWindow({ messages, isAnswering }: ChatWindowProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const previousMessageCount = useRef(0);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const nearBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 100;
+    const isStreamingUpdate = messages.length === previousMessageCount.current;
+    previousMessageCount.current = messages.length;
     el.scrollTo({
       top: el.scrollHeight,
-      behavior: reduceMotion || !nearBottom ? 'auto' : 'smooth',
+      behavior: reduceMotion || !nearBottom || isStreamingUpdate ? 'auto' : 'smooth',
     });
-  }, [messages.length, isAnswering]);
+  }, [messages, isAnswering]);
 
   return (
     <div
