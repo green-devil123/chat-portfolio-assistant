@@ -2,7 +2,8 @@ import { useCallback, useRef, useState } from 'react';
 import { answerQuestion } from '../ai/answer/answerer';
 import type { ChatState } from '../types';
 
-const WORD_REVEAL_DELAY_MS = 40;
+const WORD_REVEAL_DELAY_MS = 100;
+const MIN_LOADING_DURATION_MS = 1200;
 
 function createId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`;
@@ -27,9 +28,14 @@ export function useChat() {
 
     inFlight.current += 1;
     setIsAnswering(true);
+    const loadingStartedAt = Date.now();
     let answerText: string;
     try {
       answerText = (await answerQuestion(content)).text;
+      const remainingLoadingTime = MIN_LOADING_DURATION_MS - (Date.now() - loadingStartedAt);
+      if (remainingLoadingTime > 0) {
+        await new Promise<void>((resolve) => window.setTimeout(resolve, remainingLoadingTime));
+      }
     } finally {
       inFlight.current -= 1;
       if (inFlight.current === 0) setIsAnswering(false);
