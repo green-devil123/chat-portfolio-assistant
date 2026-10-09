@@ -12,7 +12,7 @@ function AnswerPending() {
     <div role="status" aria-label="Assistant is answering" className="panel-enter">
       <p className="eyebrow text-[0.75rem]">◈ SYSTEM_AI</p>
       <p className="mt-2 font-terminal text-sm tracking-[0.08em] text-ivory-muted">
-        Signal acquired. Diving into the Tarunverse...
+        Signal acquired. Diving into the Tarunverse....
       </p>
       <div className="mt-3 flex items-center gap-1.5" aria-hidden="true">
         <span className="typing-dot h-1.5 w-1.5 bg-gold" />
