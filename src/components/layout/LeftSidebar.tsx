@@ -162,7 +162,7 @@ export function LeftSidebar({ activeView, onNavigate }: NavProps) {
       className="left-sidebar hidden h-full w-[18.5rem] shrink-0 flex-col overflow-hidden border-r-2 border-line bg-ink-soft lg:flex"
       aria-label="Sidebar"
     >
-      <div className="left-sidebar-inner flex flex-1 flex-col px-4 pt-8 pb-7">
+      <div className="left-sidebar-inner flex flex-1 flex-col px-4 pt-4 pb-7">
         <Brand />
         <NavList activeView={activeView} onNavigate={onNavigate} />
         <div className="left-sidebar-status-wrap mt-auto pt-8">

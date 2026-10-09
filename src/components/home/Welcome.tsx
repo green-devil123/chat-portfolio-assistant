@@ -12,7 +12,7 @@ export function Welcome({ suggestions, onSelectSuggestion }: WelcomeProps) {
         <p className="welcome-compact-hide eyebrow">ACCESS GRANTED — WELCOME TO</p>
 
         <h1 className="welcome-title display-xl mt-2 text-3xl uppercase text-ivory sm:text-5xl lg:text-[3.4rem]">
-          Tarun Agarwal
+          THE TARUNVERSE
         </h1>
 
         <p className="welcome-role mt-1.5 font-terminal text-sm uppercase tracking-[0.2em] text-gold">
