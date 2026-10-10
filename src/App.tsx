@@ -23,41 +23,43 @@ export default function App() {
     <div className="crt h-full bg-ink text-ivory">
       {booting && <BootSequence onDone={() => setBooting(false)} />}
 
-      <MobileNavigation activeView={view} onNavigate={navigate} />
+      <div className={`h-full ${booting ? 'invisible' : ''}`}>
+        <MobileNavigation activeView={view} onNavigate={navigate} />
 
-      <div className="flex h-full pt-14 lg:pt-0">
-        <LeftSidebar activeView={view} onNavigate={navigate} />
+        <div className="flex h-full pt-14 lg:pt-0">
+          <LeftSidebar activeView={view} onNavigate={navigate} />
 
-        <RightPanel view={view}>
-          <div key={view} className="panel-enter flex min-h-0 flex-1 flex-col">
-            {view === 'home' ? (
-              <div className="flex min-h-0 flex-1 flex-col">
-                <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
-                  {chat.hasStarted ? (
-                    <ChatWindow messages={chat.messages} isAnswering={chat.isAnswering} />
-                  ) : (
-                    <Welcome suggestions={DEFAULT_SUGGESTIONS} onSelectSuggestion={chat.sendMessage} />
-                  )}
+          <RightPanel view={view}>
+            <div key={view} className="panel-enter flex min-h-0 flex-1 flex-col">
+              {view === 'home' ? (
+                <div className="flex min-h-0 flex-1 flex-col">
+                  <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+                    {chat.hasStarted ? (
+                      <ChatWindow messages={chat.messages} isAnswering={chat.isAnswering} />
+                    ) : (
+                      <Welcome suggestions={DEFAULT_SUGGESTIONS} onSelectSuggestion={chat.sendMessage} />
+                    )}
+                  </div>
+
+                  <ChatInput
+                    onSubmit={chat.sendMessage}
+                    placeholder={
+                      chat.hasStarted ? 'ENTER QUERY...' : 'ENTER QUERY ABOUT TARUN...'
+                    }
+                  />
                 </div>
-
-                <ChatInput
-                  onSubmit={chat.sendMessage}
-                  placeholder={
-                    chat.hasStarted ? 'ENTER QUERY...' : 'ENTER QUERY ABOUT TARUN...'
-                  }
-                />
-              </div>
-            ) : view === 'projects' ? (
-              <ProjectsView />
-            ) : view === 'education' ? (
-              <EducationView />
-            ) : view === 'skills' ? (
-              <SkillsView />
-            ) : (
-              <ContactsView />
-            )}
-          </div>
-        </RightPanel>
+              ) : view === 'projects' ? (
+                <ProjectsView />
+              ) : view === 'education' ? (
+                <EducationView />
+              ) : view === 'skills' ? (
+                <SkillsView />
+              ) : (
+                <ContactsView />
+              )}
+            </div>
+          </RightPanel>
+        </div>
       </div>
     </div>
   );
