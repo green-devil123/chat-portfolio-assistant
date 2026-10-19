@@ -1,6 +1,7 @@
 import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 import type { View } from '../../types';
 import { LogoMark } from '../brand/LogoMark';
+import { DownloadIcon, ResumeIcon } from './icons';
 import { NAV_ITEMS } from './navItems';
 
 type NavProps = {
@@ -210,6 +211,52 @@ function SystemStatus() {
   );
 }
 
+const RESUME_VIEW_URL = 'https://drive.google.com/file/d/120ORbenzilDFm9XWFCYorVkLEULSnSN7/view';
+const RESUME_DOWNLOAD_URL =
+  'https://drive.google.com/uc?export=download&id=120ORbenzilDFm9XWFCYorVkLEULSnSN7';
+
+function ResumeCard() {
+  return (
+    <div
+      className="left-sidebar-resume surface-glow mx-1 border-2 border-line bg-gold/[0.02]"
+      style={{ clipPath: CUT_SMALL }}
+      aria-label="Resume"
+    >
+      <div className="left-sidebar-resume-heading flex items-center justify-between border-b-2 border-line px-3.5 py-1.5 text-[0.62rem] tracking-[0.32em] text-gold phosphor-text">
+        <span className="flex items-center gap-2">
+          <ResumeIcon className="h-3.5 w-3.5" />
+          RESUME_FILE
+        </span>
+        <span className="text-ivory-muted">PDF</span>
+      </div>
+      <div className="left-sidebar-resume-body px-3.5 py-3">
+        <p className="left-sidebar-resume-filename truncate font-terminal text-[0.68rem] tracking-[0.14em] text-ivory-dim">
+          tarun_agarwal_resume.pdf
+        </p>
+        <div className="left-sidebar-resume-actions mt-2.5 flex gap-2">
+          <a
+            href={RESUME_VIEW_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="left-sidebar-resume-action flex flex-1 items-center justify-center gap-1.5 border-2 border-line px-2 py-2 text-[0.6rem] uppercase tracking-[0.2em] text-ivory-muted transition-colors duration-200 hover:border-gold/60 hover:bg-gold/[0.05] hover:text-gold"
+          >
+            Review
+          </a>
+          <a
+            href={RESUME_DOWNLOAD_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="left-sidebar-resume-action flex flex-1 items-center justify-center gap-1.5 border-2 border-gold bg-gold/[0.08] px-2 py-2 text-[0.6rem] uppercase tracking-[0.2em] text-gold phosphor-text transition-colors duration-200 hover:bg-gold/[0.16]"
+          >
+            <DownloadIcon className="h-3 w-3" />
+            Download
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ScreenBezel() {
   return (
     <div className="left-sidebar-bezel flex shrink-0 items-center gap-1.5 border-b-2 border-line-soft px-4 py-2">
@@ -233,7 +280,8 @@ export function LeftSidebar({ activeView, onNavigate }: NavProps) {
       <div className="left-sidebar-inner relative z-10 flex flex-1 flex-col px-4 pt-4 pb-7">
         <Brand />
         <NavList activeView={activeView} onNavigate={onNavigate} />
-        <div className="left-sidebar-status-wrap mt-auto pt-8">
+        <div className="left-sidebar-status-wrap mt-auto space-y-4 pt-8">
+          <ResumeCard />
           <SystemStatus />
         </div>
       </div>
@@ -257,6 +305,9 @@ export function LeftSidebarContent({ activeView, onNavigate }: NavProps) {
         <Brand showBrand />
       </div>
       <NavList activeView={activeView} onNavigate={onNavigate} />
+      <div className="px-1 pt-6">
+        <ResumeCard />
+      </div>
     </>
   );
 }
